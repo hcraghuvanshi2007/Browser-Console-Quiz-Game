@@ -31,7 +31,7 @@ Upon completing this assignment, you will be able to:
 
 ```
 Lab-Assignment-4/
-├── quiz.js           # Main JavaScript file with quiz logic
+├── 1.html           # Main JavaScript file with quiz logic
 └── README.md         # Project documentation (this file)
 ```
 
