@@ -1,0 +1,78 @@
+<!-- Browser Console Quiz Game -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Console Quiz Game</title>
+</head>
+<body>
+    <h1>Console Quiz Game</h1>
+    <p>Open your browser console to play the quiz!</p>
+
+<script>
+// Array to store quiz questions and answers
+const quizQuestions = [
+  {
+    question: "What is the capital of France?",
+    answer: "paris"Browser-Console-Quiz-Game
+  },
+  {
+    question: "Which planet is closest to the sun?",
+    answer: "mercury"
+  },
+  {
+    question: "What is 2 + 2?",
+    answer: "4"
+  },
+  {
+    question: "What is the largest ocean on Earth?",
+    answer: "pacific"
+  },
+  {
+    question: "How many continents are there?",
+    answer: "7"
+  }
+];
+
+// Function to run the quiz
+function runQuiz() {
+  // Initialize score to zero
+  let score = 0;
+  
+  // Loop through each question in the array
+  for (let i = 0; i < quizQuestions.length; i++) {
+    // Get current question and answer
+    const currentQuestion = quizQuestions[i].question;
+    const correctAnswer = quizQuestions[i].answer;
+    
+    // Prompt user for input
+    const userAnswer = prompt(currentQuestion);
+    
+    // Check if user cancelled the prompt
+    if (userAnswer === null) {
+      alert("Quiz cancelled!");
+      return;
+    }
+    
+    // Normalize the input (lowercase and trim)
+    const normalizedAnswer = userAnswer.toLowerCase().trim();
+    
+    // Check if the answer is correct
+    if (normalizedAnswer === correctAnswer) {
+      alert("✓ Correct! Your answer: " + normalizedAnswer);
+      score++;
+    } else {
+      alert("✗ Incorrect! Your answer: " + normalizedAnswer + "\nCorrect answer: " + correctAnswer);
+    }
+  }
+  
+  // Display final score
+  alert("Quiz Complete!\nYour final score: " + score + " out of " + quizQuestions.length);
+}
+
+// Run the quiz
+runQuiz();
+</script>
+</body>
+</html>
